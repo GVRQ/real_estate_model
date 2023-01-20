@@ -73,5 +73,5 @@ def main():
     price = predict(response_dict)
     st.success(f"The predicted price of the property is AED {price:,.2f}")
 
-if name == "main":
-main()
+if __name__ == "__main__":
+    main()
