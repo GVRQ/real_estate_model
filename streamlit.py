@@ -5,6 +5,13 @@ from static.df_cols import DF_COLS
 import pandas as pd
 import pickle
 
+# currency conversion
+aed_to_usd = 1 / 3.67 # exchange rate
+aed_to_eur = 1 / 4.45
+aed_to_rub = 1 / 0.058
+aed_to_gbp = 1 / 5.1
+aed_to_sek = 1 / 0.39
+
 def load_model():
     return pickle.load(open('final_model.p', 'rb'))
 
@@ -90,17 +97,10 @@ def main():
     price = predict(response_dict)
     price = round(price, -4) # rounding up to 50,000 AED
     st.success(f"The predicted price of the property is {price:,} AED.")
-#    st.success(f"The predicted price of the property is {price:,.2f} AED.")
-#st.success(f"The predicted price of the property is {price:,} AED.")
+    st.info(f"Currency Conversion: \n USD: {price * aed_to_usd:,.2f} \n EUR: {price * aed_to_eur:,.2f} \n RUB: {price * aed_to_rub:,.2f} \n GBP: {price * aed_to_gbp:,.2f} \n SEK: {price * aed_to_sek:,.2f} ")
 
-# currency conversion
-aed_to_usd = 1 / 3.67 # exchange rate
-aed_to_eur = 1 / 4.45
-aed_to_rub = 1 / 0.058
-aed_to_gbp = 1 / 5.1
-aed_to_sek = 1 / 0.39
-
-st.info(f"Currency Conversion: \n USD: {price * aed_to_usd:,.2f} \n EUR: {price * aed_to_eur:,.2f} \n RUB: {price * aed_to_rub:,.2f} \n GBP: {price * aed_to_gbp:,.2f} \n SEK: {price * aed_to_sek:,.2f} ")
+    #st.success(f"The predicted price of the property is {price:,.2f} AED.")
+    #st.success(f"The predicted price of the property is {price:,} AED.")
 
 if __name__ == "__main__":
     main()
