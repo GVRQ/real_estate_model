@@ -1,0 +1,1 @@
+PROPERTY_TYPES = ['Apartment', 'Villa', 'Townhouse', 'Penthouse', 'Hotel Apartment']
