@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 
 def load_model():
-    return pickle.load(open('finalized_model.p', 'rb'))
+    return pickle.load(open('final_model.p', 'rb'))
 
 def predict(response_dict):
     # initialize all columns with 0
