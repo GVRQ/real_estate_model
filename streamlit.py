@@ -44,7 +44,7 @@ def main():
     size_sqft = st.slider("Square footage of the property", 247,7500,1200)
     pool = st.checkbox("Pool")
     balcony = st.checkbox("Balcony")
-    maid = st.checkbox("Maid's room?")
+    maid = st.checkbox("Maid's room")
     gym = st.checkbox("Gym")
     brand_new = st.checkbox("Is the property brand new?")
     burj_view = st.checkbox("View of the Burj Khalifa")
