@@ -95,14 +95,14 @@ def main():
         "beach": beach_access
     }
     price = predict(response_dict)
-    price = round(price, -4) # rounding up to 50,000 AED
-    st.success(f"The predicted price of the property is {price:,} AED.")
+    price = int(round(price, -3)) # rounding up to 1,000 AED
+    st.success(f"The predicted price of the property is {price} AED")
     st.info(f"Currency Conversion:")
-    st.info(f"USD: {price * aed_to_usd:,.2f}")
-    st.info(f"EUR: {price * aed_to_eur:,.2f}")
-    st.info(f"RUB: {price * aed_to_rub:,.2f}")
-    st.info(f"GBP: {price * aed_to_gbp:,.2f}")
-    st.info(f"SEK: {price * aed_to_sek:,.2f}")
+    st.info(f"USD: {price * aed_to_usd}")
+    st.info(f"EUR: {price * aed_to_eur")
+    st.info(f"RUB: {price * aed_to_rub}")
+    st.info(f"GBP: {price * aed_to_gbp}")
+    st.info(f"SEK: {price * aed_to_sek}")
 
     #st.success(f"The predicted price of the property is {price:,.2f} AED.")
     #st.success(f"The predicted price of the property is {price:,} AED.")
