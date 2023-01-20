@@ -99,7 +99,7 @@ def main():
     st.success(f"The predicted price of the property is {price} AED")
     st.info(f"Currency Conversion:")
     st.info(f"USD: {price * aed_to_usd}")
-    st.info(f"EUR: {price * aed_to_eur")
+    st.info(f"EUR: {price * aed_to_eur}")
     st.info(f"RUB: {price * aed_to_rub}")
     st.info(f"GBP: {price * aed_to_gbp}")
     st.info(f"SEK: {price * aed_to_sek}")
