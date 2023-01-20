@@ -39,9 +39,9 @@ def main():
 
     location = st.selectbox("Select the location of the property", LOCATIONS)
     property_type = st.selectbox("Select the property type", PROPERTY_TYPES)
-    beds = st.number_input("Enter the number of bedrooms in the property")
-    baths = st.number_input("Enter the number of bathrooms in the property")
-    size_sqft = st.number_input("Enter the square footage of the property")
+    beds = st.number_input("Enter the number of bedrooms in the property", value=0, step=1)
+    baths = st.number_input("Enter the number of bathrooms in the property", value=0, step=1)
+    size_sqft = st.number_input("Enter the square footage of the property", value=0, step=1)
     pool = st.checkbox("Does the property have a pool?")
     balcony = st.checkbox("Does the property have a balcony?")
     maid = st.checkbox("Does the property have a maid's room?")
@@ -52,6 +52,23 @@ def main():
     sea_view = st.checkbox("Does the property have a sea view?")
     beach_access = st.checkbox("Is the property beach accessible?")
     submit = st.button("Submit")
+
+    response_dict = {
+    "location": location,
+    "property_type": property_type,
+    "beds": beds,
+    "baths": baths,
+    "size_sqft": size_sqft,
+    "pool": pool,
+    "balcony": balcony,
+    "maid": maid,
+    "gym": gym,
+    "brand_new": brand_new,
+    "burj_view": burj_view,
+    "furnished": furnished,
+    "sea_view": sea_view,
+    "beach": beach_access
+}
 
     if submit:
         response_dict = {
