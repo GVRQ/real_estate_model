@@ -91,7 +91,7 @@ def main():
     price = round(price, -4) # rounding up to 50,000 AED
     st.success(f"The predicted price of the property is {price:,} AED.")
 #    st.success(f"The predicted price of the property is {price:,.2f} AED.")
-st.success(f"The predicted price of the property is {price:,} AED.")
+#st.success(f"The predicted price of the property is {price:,} AED.")
 
 # currency conversion
 aed_to_usd = 1 / 3.67 # exchange rate
