@@ -35,22 +35,22 @@ def predict(response_dict):
     return y_pred
 
 def main():
-    st.title("Real Estate Price Predictor")
+    st.title("Dubai Real Estate Price Predictor")
 
-    location = st.selectbox("Select the location of the property", LOCATIONS)
-    property_type = st.selectbox("Select the property type", PROPERTY_TYPES)
-    beds = st.number_input("Enter the number of bedrooms in the property", value=0, step=1)
-    baths = st.number_input("Enter the number of bathrooms in the property", value=0, step=1)
-    size_sqft = st.number_input("Enter the square footage of the property", value=0, step=1)
-    pool = st.checkbox("Does the property have a pool?")
-    balcony = st.checkbox("Does the property have a balcony?")
-    maid = st.checkbox("Does the property have a maid's room?")
-    gym = st.checkbox("Does the property have a gym?")
+    location = st.selectbox("Select the location of the property", sorted(LOCATIONS))
+    property_type = st.selectbox("Property type", PROPERTY_TYPES)
+    beds = st.slider("Nunber of Bedrooms. 0 is a Studio", 0,6,2)
+    baths = st.slider("Number of Bathrooms", 1,7,3)
+    size_sqft = st.slider("Square footage of the property", 247,7500,1200)
+    pool = st.checkbox("Pool")
+    balcony = st.checkbox("Balcony")
+    maid = st.checkbox("Maid's room?")
+    gym = st.checkbox("Gym")
     brand_new = st.checkbox("Is the property brand new?")
-    burj_view = st.checkbox("Does the property have a view of the Burj Khalifa?")
-    furnished = st.checkbox("Is the property furnished?")
-    sea_view = st.checkbox("Does the property have a sea view?")
-    beach_access = st.checkbox("Is the property beach accessible?")
+    burj_view = st.checkbox("View of the Burj Khalifa")
+    furnished = st.checkbox("Is the property furnished")
+    sea_view = st.checkbox("Sea view?")
+    beach_access = st.checkbox("Beach nearby")
     submit = st.button("Submit")
 
     response_dict = {
@@ -88,7 +88,19 @@ def main():
         "beach": beach_access
     }
     price = predict(response_dict)
-    st.success(f"The predicted price of the property is AED {price:,.2f}")
+    price = round(price, -4) # rounding up to 50,000 AED
+    st.success(f"The predicted price of the property is {price:,} AED.")
+#    st.success(f"The predicted price of the property is {price:,.2f} AED.")
+st.success(f"The predicted price of the property is {price:,} AED.")
+
+# currency conversion
+aed_to_usd = 1 / 3.67 # exchange rate
+aed_to_eur = 1 / 4.45
+aed_to_rub = 1 / 0.058
+aed_to_gbp = 1 / 5.1
+aed_to_sek = 1 / 0.39
+
+st.info(f"Currency Conversion: \n USD: {price * aed_to_usd:,.2f} \n EUR: {price * aed_to_eur:,.2f} \n RUB: {price * aed_to_rub:,.2f} \n GBP: {price * aed_to_gbp:,.2f} \n SEK: {price * aed_to_sek:,.2f} ")
 
 if __name__ == "__main__":
     main()
