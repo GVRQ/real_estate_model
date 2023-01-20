@@ -14,7 +14,7 @@ def predict(response_dict):
 
     # update corresponding columns using submitted form values
     d[f'location_{response_dict["location"]}'] = [1]
-    d[f'property_type{response_dict["property_type"]}'] = [1]
+    d[f'property_type_{response_dict["property_type"]}'] = [1]
     d['beds'] = [int(response_dict['beds'])]
     d['baths'] = [int(response_dict['baths'])]
     d['size_sqft'] = [int(response_dict['size_sqft'])] 
