@@ -96,13 +96,13 @@ def main():
     }
     price = predict(response_dict)
     price = int(round(price, -3)) # rounding up to 1,000 AED
-    st.success(f"The predicted price of the property is {price} AED")
+    st.success(f"The predicted price of the property is {'{:,}'.format(price)} AED")
     st.info(f"Currency Conversion:")
-    st.info(f"USD: {price * aed_to_usd}")
-    st.info(f"EUR: {price * aed_to_eur}")
-    st.info(f"RUB: {price * aed_to_rub}")
-    st.info(f"GBP: {price * aed_to_gbp}")
-    st.info(f"SEK: {price * aed_to_sek}")
+    st.info(f"USD: {'{:,}'.format(int(round(price * aed_to_usd)))}")
+    st.info(f"EUR: {'{:,}'.format(int(round(price * aed_to_eur)))}")
+    st.info(f"RUB: {'{:,}'.format(int(round(price * aed_to_rub)))}")
+    st.info(f"GBP: {'{:,}'.format(int(round(price * aed_to_gbp)))}")
+    st.info(f"SEK: {'{:,}'.format(int(round(price * aed_to_sek)))}")
 
     #st.success(f"The predicted price of the property is {price:,.2f} AED.")
     #st.success(f"The predicted price of the property is {price:,} AED.")
