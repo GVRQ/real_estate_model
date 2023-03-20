@@ -4,6 +4,7 @@ from static.locations import LOCATIONS
 from static.df_cols import DF_COLS
 import pandas as pd
 import pickle
+from PIL import Image
 
 # currency conversion
 aed_to_usd = 1 / 3.67 # exchange rate
@@ -42,6 +43,8 @@ def predict(response_dict):
     return y_pred
 
 def main():
+    image = Image.open('dubai.jpg')
+    st.image(image)
     st.title("Dubai Real Estate Price Predictor")
     
     # adding a section
