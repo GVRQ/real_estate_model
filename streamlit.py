@@ -47,7 +47,7 @@ def main():
     # adding a section
     st.markdown("DISCLAIMER: You are viewing a public version of the Dubai Real Estate Price Prediction app. It was last updated in January 2023. This version was developed solely for educational purposes and should not be taken as professional advice for property investment purposes.")
     st.markdown("I strongly discourage you to make any purchase or investment decisions based on this tool.")
-    st.markdown("BIO, CV, Certifications: https://beacons.ai/gavrilov")
+    st.markdown("BIO & Certifications: https://beacons.ai/gavrilov")
     st.markdown("Linkedin: https://linkedin.com/in/GVRQ/")
     st.markdown("GitHub: https://github.com/GVRQ/")
 
