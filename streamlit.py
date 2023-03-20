@@ -43,6 +43,14 @@ def predict(response_dict):
 
 def main():
     st.title("Dubai Real Estate Price Predictor")
+    
+    # adding a section
+    st.markdown("DISCLAIMER: You are viewing a public version of the Dubai Real Estate Price Prediction app. It was last updated in January 2023.")
+    st.markdown("This version was developed solely for educational purposes and should not be taken as professional advice for property investment purposes.")
+    st.markdown("I strongly discourage you to make any purchase or investment decisions based on this tool.")
+    st.markdown("Bio, CV, Certifications: https://beacons.ai/gavrilov")
+    st.markdown("Linkedin: https://linkedin.com/in/GVRQ/")
+    st.markdown("GitHub: https://github.com/GVRQ/")
 
     location = st.selectbox("Select the location of the property", sorted(LOCATIONS))
     property_type = st.selectbox("Property type", PROPERTY_TYPES)
@@ -106,13 +114,7 @@ def main():
 
     #st.success(f"The predicted price of the property is {price:,.2f} AED.")
     #st.success(f"The predicted price of the property is {price:,} AED.")
-    
-    # adding a section
-    st.markdown("This project on GitHub: https://github.com/GVRQ/streamlit-crypto-data")
-    st.markdown("Data is provided by the the CoinCap's API. Available crypto coins: Bitcoin, Ethereum, Bitcoin-Cash, EOS, Stellar, Litecoin, Cardano, Tether, IOTA, TRON")
-    st.markdown("Linkedin: https://linkedin.com/in/GVRQ/")
-    st.markdown("GitHub: https://github.com/GVRQ/")
-    st.markdown("Bio, CV, Certifications: https://beacons.ai/gavrilov")
+   
 
 if __name__ == "__main__":
     main()
