@@ -106,6 +106,13 @@ def main():
 
     #st.success(f"The predicted price of the property is {price:,.2f} AED.")
     #st.success(f"The predicted price of the property is {price:,} AED.")
+    
+    # adding a section
+    st.markdown("This project on GitHub: https://github.com/GVRQ/streamlit-crypto-data")
+    st.markdown("Data is provided by the the CoinCap's API. Available crypto coins: Bitcoin, Ethereum, Bitcoin-Cash, EOS, Stellar, Litecoin, Cardano, Tether, IOTA, TRON")
+    st.markdown("Linkedin: https://linkedin.com/in/GVRQ/")
+    st.markdown("GitHub: https://github.com/GVRQ/")
+    st.markdown("Bio, CV, Certifications: https://beacons.ai/gavrilov")
 
 if __name__ == "__main__":
     main()
